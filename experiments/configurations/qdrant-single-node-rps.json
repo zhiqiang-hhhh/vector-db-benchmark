@@ -21,9 +21,9 @@
       "hnsw_config": { "m": 16, "ef_construct": 128 }
     },
     "search_params": [
-      { "parallel": 8, "config": { "hnsw_ef": 128 } },
-      { "parallel": 16, "config": { "hnsw_ef": 256 } },
-      { "parallel": 100, "config": { "hnsw_ef": 512 } }
+      { "parallel": 10, "config": { "hnsw_ef": 256 } },
+      { "parallel": 40, "config": { "hnsw_ef": 256 } },
+      { "parallel": 80, "config": { "hnsw_ef": 256 } }
     ],
     "upload_params": { "parallel": 16 }
   },

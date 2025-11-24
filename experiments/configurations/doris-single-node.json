@@ -23,9 +23,11 @@
         "search_params": [
             {
                 "parallel": 8,
-                "top": 10,
-                "table": "doris_default",
-                "ef": 128
+                "table": "doris_default"
+            },
+            {
+                "parallel": 8,
+                "table": "doris_default"
             }
         ]
     }
