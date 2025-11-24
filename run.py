@@ -1,5 +1,6 @@
 import fnmatch
 import traceback
+import warnings
 from typing import List, Optional
 
 import stopit
@@ -9,6 +10,9 @@ from benchmark.config_read import read_dataset_config, read_engine_configs
 from benchmark.dataset import Dataset
 from engine.base_client import IncompatibilityError
 from engine.clients.client_factory import ClientFactory
+
+# Suppress socket ResourceWarnings from multiprocessing and library cleanup
+warnings.filterwarnings("ignore", category=ResourceWarning, message=".*unclosed.*socket.*")
 
 app = typer.Typer()
 

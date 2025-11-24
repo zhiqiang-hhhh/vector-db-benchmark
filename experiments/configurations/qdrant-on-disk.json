@@ -1,17 +1,44 @@
 [
   {
-    "name": "qdrant-on-disk-default",
+    "name": "qdrant-on-disk-default-m-32-ef-128-parallel-10",
     "engine": "qdrant",
     "connection_params": {},
     "collection_params": {
       "optimizers_config": { "memmap_threshold": 10000 },
-      "hnsw_config": { "on_disk": true }
+      "hnsw_config": { "on_disk": true, "m": 32, "ef_construct": 128 }
     },
     "search_params": [
-      { "parallel": 8, "config": { "hnsw_ef": 128 } }
+      { "parallel": 10, "config": { "hnsw_ef": 128 } }
     ],
-    "upload_params": { "parallel": 4 }
+    "upload_params": { "parallel": 10, "batch_size": 10240  }
   },
+  {
+    "name": "qdrant-on-disk-default-m-32-ef-128-parallel-40",
+    "engine": "qdrant",
+    "connection_params": {},
+    "collection_params": {
+      "optimizers_config": { "memmap_threshold": 10000 },
+      "hnsw_config": { "on_disk": true, "m": 32, "ef_construct": 128 }
+    },
+    "search_params": [
+      { "parallel": 40, "config": { "hnsw_ef": 128 } }
+    ],
+    "upload_params": { "parallel": 40, "batch_size": 10240  }
+  },
+  {
+    "name": "qdrant-on-disk-default-m-32-ef-128-parallel-80",
+    "engine": "qdrant",
+    "connection_params": {},
+    "collection_params": {
+      "optimizers_config": { "memmap_threshold": 10000 },
+      "hnsw_config": { "on_disk": true, "m": 32, "ef_construct": 128 }
+    },
+    "search_params": [
+      { "parallel": 80, "config": { "hnsw_ef": 128 } }
+    ],
+    "upload_params": { "parallel": 80, "batch_size": 10240  }
+  },
+
   {
     "name": "qdrant-all-on-disk-scalar-q",
     "engine": "qdrant",
@@ -54,6 +81,6 @@
     "search_params": [
       { "parallel": 8, "with_payload": true }
     ],
-    "upload_params": { "parallel": 4 }
+    "upload_params": { "parallel": 8, "batch_size": 10240  }
   }
 ]

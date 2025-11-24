@@ -1,0 +1,32 @@
+[
+    {
+        "name": "doris-hnsw-default",
+        "engine": "doris",
+        "connection_params": {
+            "host": "127.0.0.1",
+            "query_port": 6937,
+            "http_port": 5937,
+            "database": "qdrant_benchmark",
+            "user": "root",
+            "password": "",
+            "table": "doris_default"
+        },
+        "collection_params": {
+            "table": "doris_default",
+            "ef_construct": 128
+        },
+        "upload_params": {
+            "parallel": 8,
+            "batch_size": 10240,
+            "table": "doris_default"
+        },
+        "search_params": [
+            {
+                "parallel": 8,
+                "top": 10,
+                "table": "doris_default",
+                "ef": 128
+            }
+        ]
+    }
+]
