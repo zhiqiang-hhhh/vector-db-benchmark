@@ -13,20 +13,31 @@
         },
         "collection_params": {
             "table": "doris_default",
-            "ef_construct": 128
+            "hnsw_config": {
+                "m": 90,
+                "ef_construct": 200
+            }
         },
         "upload_params": {
             "parallel": 8,
-            "batch_size": 10240,
+            "batch_size": 300000,
             "table": "doris_default"
         },
         "search_params": [
             {
-                "parallel": 8,
+                "parallel": 10,
                 "table": "doris_default"
             },
             {
-                "parallel": 8,
+                "parallel": 30,
+                "table": "doris_default"
+            },
+            {
+                "parallel": 60,
+                "table": "doris_default"
+            },
+            {
+                "parallel": 90,
                 "table": "doris_default"
             }
         ]
